@@ -33,7 +33,7 @@ ARG boost_libs=" \
   --with-log \
   --with-regex \
   --with-system \
-  --with-thread
+  --with-thread"
 RUN wget http://downloads.sourceforge.net/project/boost/boost/${boost_version}/${boost_dir}.tar.gz \
   && echo "${boost_sha256_sum}  ${boost_dir}.tar.gz" | sha256sum -c \
   && tar xfz ${boost_dir}.tar.gz \
@@ -60,7 +60,7 @@ RUN wget \
 # install nicehash
 
 
-RUN git clone https://github.com/nicehash/nheqminer.git \
+RUN git clone https://github.com/poolgold/nheqminer.git \
   && chmod +x nheqminer/cpu_xenoncat/asm_linux/* \
   && cd nheqminer/cpu_xenoncat/asm_linux \
   && sh assemble.sh \
